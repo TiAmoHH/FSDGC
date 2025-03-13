@@ -10,9 +10,10 @@ addpath('data_L')
 
 %% Parameters
 load('MSRA25_uni');%MSRA25_uni,PalmData25_uni,isolet,usps,letter_uni
+load('B_data');
 num_self = 20; %MSRA25_uni: 20; PalmData25_uni: 2; isolet: 64; usps: 256; letter_uni: 64;
-numAnchor = 128; %MSRA25_uni: 128; PalmData25_uni: 512; isolet: 256; usps: 1024; letter_uni: 1024;
-numNearestAnchor = 10; %MSRA25_uni: 10; PalmData25_uni: 90; isolet: 20; usps: 80; letter_uni: 50;
+% numAnchor = 128; %MSRA25_uni: 128; PalmData25_uni: 512; isolet: 256; usps: 1024; letter_uni: 1024;
+% numNearestAnchor = 10; %MSRA25_uni: 10; PalmData25_uni: 90; isolet: 20; usps: 80; letter_uni: 50;
 random_seed = 18; %MSRA25_uni: 18; PalmData25_uni: 15; isolet: 19; usps: 17; letter_uni: 8;
 
 %% Init
@@ -26,7 +27,7 @@ end
 c = length(unique(Y));
 
 % 
-[B,Anchor]=ULGEmzy(X,log2(numAnchor),numNearestAnchor,1); %1 BKHM,2 Kmeans++
+% [B,Anchor]=ULGEmzy(X,log2(numAnchor),numNearestAnchor,1); %1 BKHM,2 Kmeans++
 
 %Randomly init F and G
 [n,m] = size(B);
